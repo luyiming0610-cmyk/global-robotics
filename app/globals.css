@@ -1,26 +1,88 @@
+
 @import "tailwindcss";
 
+/* =================================
+   GLOBAL ROBOTICS DESIGN SYSTEM
+   ================================= */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Brand colors */
+  --brand-navy: #102a43;
+  --brand-navy-deep: #0b1f33;
+  --brand-blue: #2563eb;
+  --brand-blue-hover: #1d4ed8;
+
+  /* Backgrounds */
+  --background: #f4f7fb;
+  --surface: #ffffff;
+  --surface-muted: #eef3f8;
+
+  /* Typography */
+  --foreground: #0f172a;
+  --text-secondary: #526579;
+
+  /* Borders */
+  --border: #d9e2ec;
+
+  /* Layout */
+  --container-width: 1280px;
+  --header-height: 80px;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+
+  --color-brand-navy: var(--brand-navy);
+  --color-brand-blue: var(--brand-blue);
+
+  --color-surface: var(--surface);
+  --color-surface-muted: var(--surface-muted);
+
+  --color-border: var(--border);
+
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Base styles */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
+  min-height: 100%;
+  margin: 0;
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+::selection {
+  background: rgba(37, 99, 235, 0.18);
+}
+
+/* Accessibility */
+
+:focus-visible {
+  outline: 3px solid var(--brand-blue);
+  outline-offset: 3px;
 }
