@@ -4,7 +4,7 @@ export const siteConfig = {
   projectName: "Global Robotics",
 
   // Public brand name: to be confirmed
-  brandName: "Brand Name TBD",
+  brandName: "YOUR BRAND",
 
   // Website information
   description:
